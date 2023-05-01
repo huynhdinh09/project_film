@@ -1,0 +1,7 @@
+v-container {
+    display: block;
+}
+
+v-app-bar {
+    background-color: rgb(255, 68, 0);
+}
