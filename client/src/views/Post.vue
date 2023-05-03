@@ -2,7 +2,7 @@
     <v-container>
         <v-row no-gutters>
             <v-col sm="10" class="pa-4 mx-auto">
-                <v-card class="pa-2">
+                <v-card class="pa-4">
                     <v-img :src="`/${post.image}`"></v-img>
                     <v-card-actions class="pb-0">
                         <v-row class="mt-1 mx-1">
@@ -21,6 +21,7 @@
                     </v-card-subtitle>
                     <v-card-text class="grey--text">
                         <p>{{ post.content }}</p>
+                        <p>{{ post.details }}</p>
                         <p>{{ post.created }}</p>
                     </v-card-text>
                 </v-card>

@@ -15,6 +15,9 @@
                         <v-textarea label="Content" v-model="post.content" prepend-icon="mdi-note-plus"
                             :rules="rules"></v-textarea>
 
+                        <v-textarea label="Details" v-model="post.details" prepend-icon="mdi-note-plus"
+                            :rules="rules"></v-textarea>
+
                         <v-file-input @change="selectFile"  show-size counter multiple label="Select
                         Image"></v-file-input>
                         <v-img :src="`/${post.image}`" width="120"></v-img>
@@ -36,6 +39,7 @@ export default {
                 category: "",
                 content: "",
                 image: "",
+                details: "",
             },
             image: "",
         };
@@ -55,6 +59,7 @@ export default {
             formData.append("category", this.post.category);
             formData.append("content", this.post.content);
             formData.append("old_image", this.post.image);
+            formData.append("details", this.post.details);
             if (this.$refs.form.validate()) {
                 const response = await API.updatePost(this.$route.params.id, formData);
                 this.$router.push({ name: "home", params: { message: response.message } });

@@ -5,11 +5,11 @@
       {{ this.$route.params.message }}
     </v-alert>
     <v-row>
-      <v-col sm="4" class="pa-3" v-for="post in posts" :key="post._id">
+      <v-col sm="3" class="pa-3" v-for="post in posts" :key="post._id">
         <v-card class="=pa-1" :to="{ name: 'post', params: { id: post._id }}">
-          <v-img height="500" :src="`${post.image}`"></v-img>
+          <v-img max-width="300" height="400" :src="`${post.image}`"></v-img>
           <v-btn class="ml-4 mt-3" small oulined color="indigo" text>
-            {{ post.category }}
+            {{post.category }}
           </v-btn>
           <v-card-title class="headline">
             {{ post.title }}

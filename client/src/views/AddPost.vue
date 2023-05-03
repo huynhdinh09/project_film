@@ -15,6 +15,8 @@
                         <v-textarea label="Content" v-model="post.content" prepend-icon="mdi-note-plus"
                             :rules="rules"></v-textarea>
 
+                        <v-textarea label="Details" v-model="post.details" prepend-icon="mdi-note-plus"
+                            :rules="rules"></v-textarea>
                         <v-file-input @change="selectFile" :rules="rules" show-size counter multiple label="Select
                         Image"></v-file-input>
                         <v-btn type="submit" class="mt-3" color="primary">Add Post</v-btn>
@@ -35,6 +37,7 @@ export default {
                 category: "",
                 content: "",
                 image: "",
+                details: "",
             },
             image: "",
         };
@@ -49,6 +52,7 @@ export default {
             formData.append("title", this.post.title);
             formData.append("category", this.post.category);
             formData.append("content", this.post.content);
+            formData.append("details", this.post.details);
             if (this.$refs.form.validate()) {
                 const response = await API.addPost(formData);
                 this.$router.push({ name: "home", params: { message: response.message } });

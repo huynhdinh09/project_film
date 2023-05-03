@@ -5,7 +5,7 @@ const postSchema = mongoose.Schema({
     category: String,
     content: String,
     image: String,
-    video: String,
+    details: String,
     created: {
         type: Date,
         default: Date.now,
