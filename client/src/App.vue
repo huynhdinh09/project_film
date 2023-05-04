@@ -19,7 +19,7 @@
     <v-app-bar app class="backgroup-color: grey">
       <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
 
-      <v-toolbar-title>GhienPhim</v-toolbar-title>
+      <v-toolbar-title text-white>PHIM MỚI</v-toolbar-title>
     </v-app-bar>
 
     <v-main>
